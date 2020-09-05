@@ -1,0 +1,80 @@
+#pickACard {
+    width: 100px;
+    height: 140px;
+    border-radius: 8px;
+    display: flex;
+    margin: 60px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+aside {
+    display: flex;
+    float: left;
+}
+#battleField {
+    position: absolute;
+    height: 400px;
+    width: 1200px;
+    margin: 100px;
+
+}
+h1 {
+    width: 100px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#fiveNewCards {
+    display: flex;
+    float: center;
+    justify-content: space-evenly;
+    align-items: right;
+    flex-wrap: wrap;
+    margin: 20px 10px;
+}
+
+@keyframes flip-horizontal-bottom {
+    0% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+    }
+    50% {
+        -webkit-transform: rotateX(-180deg);
+              transform: rotateX(-180deg);
+
+    }
+    100% {
+      -webkit-transform: rotateX(0deg);
+              transform: rotateX(0deg);
+    }
+}
+.deck {
+    width: 100px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.863);
+    border: 3px solid rgba(255, 230, 0, 0.89);
+    border-radius: 5px;
+    margin: 10px;
+    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+img {
+    width: 100px;
+}
+#ennemyBot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px 10px;
+}
+
+#ennemyBot div {
+    width: 100px;
+    height: 140px;
+    border: 3px solid darkblue;;
+    border-radius: 8px;
+    margin: 10px;
+}
