@@ -1,62 +1,32 @@
-// Imports de fichier et api
-import { Pokemon } from "./list.js";
-console.log(Pokemon)
-
+// IMPORT 
+import { allTheCards } from "./list_pokemon.js"
+console.log(allTheCards)
 // Holder & arrival declaration
 const cardPicker = document.getElementById("pickACard");
 const yourDeck = document.getElementById("fiveNewCards");
 
+
+
+// Decks copies and shuffles with buttons [THAT'S GOOOOOOOD BROOOOOO]
+const shuffler = document.getElementById('shuffle')
+let allyDeck = [...allTheCards];
+let ennemyDeck = [...allTheCards];
+function shuffle(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+}
+function shuffleTheDecks() {
+    shuffle(allyDeck);
+    console.log (allyDeck[0], allyDeck[1], allyDeck[2], allyDeck[3], allyDeck[4])
+    return allyDeck
+}
+shuffler.addEventListener("click", shuffleTheDecks)
+console.log("The player Deck >>> ", allyDeck)
+
 // Function of what appears 
 let countClickPickedCard = 0
-cardPicker.onclick = function(){
-    countClickPickedCard++;
-}
-let pokemonImageMatch = [
-    {name: 'Florisard' ,
-    image: './images/image1.png'},
-    {name: 'Dracofeu' ,
-    image: "./images/image2.png"},
-    {name: 'Tortank' ,
-    image: './images/image3.png'},
-    {name: 'Papillusion' ,
-    image: "./images/image4.png"},
-    {name: 'Dardagnan' ,
-    image: './images/image5.png'},
-    {name: 'Roux Carnage' ,
-    image: "./images/image6.png"},
-    {name: 'Rapacedepic' ,
-    image: './images/image7.png'},
-    {name: 'Arbok' ,
-    image: "./images/image8.png"},
-    {name: 'pikachu' ,
-    image: './images/image9.png'},
-    {name: 'Sablero' ,
-    image: "./images/image10.png"},
-    {name: 'NidoQueen' ,
-    image: './images/image11.png'},
-    {name: 'NidoKing' ,
-    image: "./images/image12.png"},
-    {name: 'Feunard' ,
-    image: './images/image13.png'},
-    {name: 'Triopineur' ,
-    image: "./images/image14.png"},
-    {name: 'Prince of Persian',
-    image: './images/image15.png'},
-    {name: 'Arcanin',
-    image: "./images/image16.png"},
-    {name: 'Tartare de Puf',
-    image: './images/image17.png'},
-    {name: "Elec'Thor ",
-    image: "./images/image18.png"},
-    {name: "Arti'Gourdin",
-    image: './images/image19.png'},
-    {name: 'Sulfura',
-    image: "./images/image20.png"},
-                                                                
-    
-]
-
-
 
 
 function fiveNewCards() {
@@ -65,7 +35,8 @@ function fiveNewCards() {
     const newDiv = document.createElement("div");
     console.log('you clicked it');
 
-    newDiv.innerHTML = `<div id="picked${countClickPickedCard}" class="deck"> <p class="pokemonName"></p> <img src="./images/image${Math.round((Math.random()*35)+1)}.png"></div>`;
+    // newDiv.innerHTML = `<div id="picked${countClickPickedCard}" class="deck"> <p class="pokemonName"></p> <img src="./images/image${Math.round((Math.random()*35)+1)}.png"></div>`;
+    newDiv.innerHTML = `<div class="deck"> <p class="pokemonName"></p> <img src=${allyDeck[countClickPickedCard-1].image}></div>`;
 
     console.log(cardPicker)
     yourDeck.appendChild(newDiv);
@@ -78,6 +49,9 @@ function fiveNewCards() {
        console.log("You Cannot Get more than 5 cards you bitch")
     };
 };
+cardPicker.onclick = function(){
+    countClickPickedCard++;
+}
 
 
 //let countClickOnDeckFiveCard = 0
