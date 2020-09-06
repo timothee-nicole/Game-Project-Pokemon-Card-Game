@@ -1,41 +1,57 @@
 // IMPORT
-import { allTheCards } from "./list_pokemon.js"
+import { allTheCards } from "./list_pokemon.js";
 
 // Holder & arrival declaration
 const cardPicker = document.getElementById("pickACard");
 const yourDeck = document.getElementById("fiveNewCards");
 
 // Way to shuffle the decks to get a random hand
-const shuffler = document.getElementById('shuffle')
+const shuffler = document.getElementById('shuffle');
 let allyDeck = [...allTheCards];
 let ennemyDeck = [...allTheCards];
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-}
+    };
+};
+let countClickShuffle = 0;
+let allyHand = [];
+let ennemyHand = [];
 
 function shuffleAllyDeck() {
-    for (let i=0; i < 100; i++) 
-    {shuffle(allyDeck); console.log(allyDeck)};
-    let allyHand = allyDeck.slice(0,5);
-    console.log(allyHand)
-    return allyHand
-}
+    if (countClickShuffle < 1) {
+        for (let i=0; i < 100; i++) 
+        {shuffle(allyDeck)}; // console.log(allyDeck)};
+        allyHand = allyDeck.slice(0,5);
+        console.log('Ally Hand >>> ',allyHand);
+        return allyHand;
+    }
+    else 
+    {
+        console.log("You can't shuffle the card deck more than one time");
+    }
+};
+
 function shuffleEnnemyDeck() {
-    for (let i=0; i < 100; i++) 
-    {shuffle(ennemyDeck); console.log(ennemyDeck)};
-    let ennemyHand = ennemyDeck.slice(0,5);
-    console.log(ennemyHand)
-    return ennemyHand
+    if (countClickShuffle < 1) {
+        for (let i=0; i < 100; i++) 
+        {shuffle(ennemyDeck)}; // console.log(ennemyDeck)};
+        ennemyHand = ennemyDeck.slice(0,5);
+        console.log('Ennemy Hand >>> ',ennemyHand);
+        return ennemyHand;
+    }
+    else 
+    {
+        console.log("You can't shuffle the card deck more than one time");
+    }
+};
+
+shuffler.onclick = function(){
+    countClickShuffle += 0.5;
 }
+// Function to know which player will attack first // Have to ask teacher for help
 
-
-/* shuffleTheDecks(allyDeck)
-console.log("The player Deck >>> ", allyDeck)
-shuffleTheDecks(ennemyDeck)
-console.log("The ennemy Deck >>> ", ennemyDeck) */
 
 
 // Function to pick the cards in your hands and add it to the html
@@ -62,6 +78,9 @@ function fiveNewCards() {
        console.log("You Cannot Get more than 5 cards you bitch")
     };
 };
+cardPicker.onclick = function(){
+    countClickPickedCard++;
+}
 
 // Function to set the hand of both the ally and the ennemy
 
