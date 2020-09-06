@@ -17,8 +17,9 @@ function shuffle(arr) {
 }
 
 function shuffleTheDecks(deck) {
-    shuffle(deck);
-    console.log (deck[0], deck[1], deck[2], deck[3], deck[4])
+    for (let i=0; i < 100; i++) 
+    {shuffle(deck)};
+    console.log(deck)
     return deck
 }
 

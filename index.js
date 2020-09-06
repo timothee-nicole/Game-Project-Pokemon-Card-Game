@@ -18,14 +18,18 @@ function shuffle(arr) {
     }
 }
 function shuffleTheDecks() {
-    shuffle(allyDeck);
-    console.log (allyDeck[0], allyDeck[1], allyDeck[2], allyDeck[3], allyDeck[4])
+    for (let i=0; i < 100; i++) 
+    {shuffle(allyDeck); console.log(allyDeck)};
     return allyDeck
 }
 
+let allyHand = [];
+let ennemyHand = [];
 
-shuffler.addEventListener("click", shuffleTheDecks)
-console.log("The player Deck >>> ", allyDeck)
+
+
+shuffler.addEventListener("click", shuffleTheDecks);
+console.log("The player Deck >>> ", allyDeck);
 
 // Function of what appears 
 let countClickPickedCard = 0

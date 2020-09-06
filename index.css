@@ -26,7 +26,7 @@
     width: 100px;
     height: 100px;
     margin: 5px;
-    background-image: url(./background_type/plant.jpg);
+    background-image: url(./background_type/plant.png);
     background-size: contain;
     background-repeat: no-repeat;
 }
