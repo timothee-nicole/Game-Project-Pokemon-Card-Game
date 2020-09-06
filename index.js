@@ -20,15 +20,40 @@ function shuffle(arr) {
 function shuffleTheDecks() {
     for (let i=0; i < 100; i++) 
     {shuffle(allyDeck); console.log(allyDeck)};
-    return allyDeck
+    let allyHand = allyDeck.slice(0,5);
+    console.log(allyHand)
+    return allyHand
+}
+function trial() {
+    console.log('machintruc')
 }
 
-let allyHand = [];
-let ennemyHand = [];
+let allyHand = allyDeck.slice(0,6);
+console.log(allyHand)
+let ennemyHand = '';
 
+/* function toHand(newArr,arr) {
+    for (let i=0; i<5 ; i++) {
+        newArr.push(arr[i]);
+        console.log(newArr)
+        return newArr;
+
+    }
+}; */
+
+allyDeck.map(() => {
+    for (let i=0; i<5 ; i++) {
+        allyHand.push(allyDeck[i])};
+        return allyHand
+});
+
+//ennemyDeck.map(toHand(ennemyHand, ennemyDeck));
+console.log("Ally Hand >>> ", allyHand)
+console.log("Ennemy Hand >>> ", ennemyHand)
 
 
 shuffler.addEventListener("click", shuffleTheDecks);
+shuffler.addEventListener("click", trial);
 console.log("The player Deck >>> ", allyDeck);
 
 // Function of what appears 
@@ -55,7 +80,7 @@ function fiveNewCards() {
     // console.log(cardPicker)
     yourDeck.appendChild(newDiv);
     // console.log(countClickPickedCard)
-    return countClickPickedCard
+
     }
     else 
     {
@@ -63,7 +88,11 @@ function fiveNewCards() {
     };
 };
 
-const theChosenOne = document.getElementById("picked1")
+
+allyHand.push(allyDeck[countClickPickedCard-1])
+console.log(allyHand)
+
+//nconst theChosenOne = document.getElementById("picked1")
 
 cardPicker.onclick = function(){
     countClickPickedCard++;

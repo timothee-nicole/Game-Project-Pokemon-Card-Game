@@ -16,17 +16,26 @@ function shuffle(arr) {
     }
 }
 
-function shuffleTheDecks(deck) {
+function shuffleAllyDeck() {
     for (let i=0; i < 100; i++) 
-    {shuffle(deck)};
-    console.log(deck)
-    return deck
+    {shuffle(allyDeck); console.log(allyDeck)};
+    let allyHand = allyDeck.slice(0,5);
+    console.log(allyHand)
+    return allyHand
+}
+function shuffleEnnemyDeck() {
+    for (let i=0; i < 100; i++) 
+    {shuffle(ennemyDeck); console.log(ennemyDeck)};
+    let ennemyHand = ennemyDeck.slice(0,5);
+    console.log(ennemyHand)
+    return ennemyHand
 }
 
-shuffleTheDecks(allyDeck)
+
+/* shuffleTheDecks(allyDeck)
 console.log("The player Deck >>> ", allyDeck)
 shuffleTheDecks(ennemyDeck)
-console.log("The ennemy Deck >>> ", ennemyDeck)
+console.log("The ennemy Deck >>> ", ennemyDeck) */
 
 
 // Function to pick the cards in your hands and add it to the html
@@ -54,6 +63,10 @@ function fiveNewCards() {
     };
 };
 
+// Function to set the hand of both the ally and the ennemy
+
+
 // Event Listener
 cardPicker.addEventListener("click", fiveNewCards);
-shuffler.addEventListener("click", shuffleTheDecks)
+shuffler.addEventListener("click", shuffleAllyDeck);
+shuffler.addEventListener("click", shuffleEnnemyDeck);
