@@ -11,7 +11,7 @@ export let allTheCards = [
         speed : 30
     },
     {
-        name : 'ninetales',
+        name : 'Ninetales',
         image : "./images/image2.png",
         type : 'fire',
         hp : 100,

@@ -1,3 +1,35 @@
+.fire img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-image: url(./background_type/fire.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.water img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-image: url(./background_type/water.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.rock img{
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    background-image: url(./background_type/rock.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.plant img{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    background-image: url(./background_type/plant.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 #pickACard {
     width: 100px;
     height: 140px;
@@ -51,8 +83,8 @@ h1 {
     }
 }
 .deck {
-    width: 100px;
-    height: 140px;
+    width: 120px;
+    height: 200px;
     background: rgba(255, 255, 255, 0.863);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;

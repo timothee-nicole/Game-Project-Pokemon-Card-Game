@@ -22,6 +22,8 @@ function shuffleTheDecks() {
     console.log (allyDeck[0], allyDeck[1], allyDeck[2], allyDeck[3], allyDeck[4])
     return allyDeck
 }
+
+
 shuffler.addEventListener("click", shuffleTheDecks)
 console.log("The player Deck >>> ", allyDeck)
 
@@ -35,13 +37,20 @@ function fiveNewCards() {
     const newDiv = document.createElement("div");
     console.log('you clicked it');
 
+
     // newDiv.innerHTML = `<div id="picked${countClickPickedCard}" class="deck"> <p class="pokemonName"></p> <img src="./images/image${Math.round((Math.random()*35)+1)}.png"></div>`;
-    newDiv.innerHTML = `<div class="deck"> <p class="pokemonName"></p> <img src=${allyDeck[countClickPickedCard-1].image}></div>`;
+    newDiv.innerHTML = 
+    `<div class="deck">
+        <div class=${allyDeck[countClickPickedCard-1].type} id="picked${countClickPickedCard}">
+            <p>HP ${allyDeck[countClickPickedCard-1].hp}</p>
+            <img src=${allyDeck[countClickPickedCard-1].image}>
+        </div>
+        <h1>${allyDeck[countClickPickedCard-1].name}</h1>
+    </div>`;
 
-    console.log(cardPicker)
+    // console.log(cardPicker)
     yourDeck.appendChild(newDiv);
-    console.log(countClickPickedCard)
-
+    // console.log(countClickPickedCard)
     return countClickPickedCard
     }
     else 
@@ -49,10 +58,15 @@ function fiveNewCards() {
        console.log("You Cannot Get more than 5 cards you bitch")
     };
 };
+
+const theChosenOne = document.getElementById("picked1")
+
 cardPicker.onclick = function(){
     countClickPickedCard++;
 }
 
+// pour les fleches console.dir($0)
+// redéfinir hand et deck
 
 //let countClickOnDeckFiveCard = 0
 //cardOfDeck.onclick = function(){
