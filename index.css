@@ -1,34 +1,41 @@
+
 .fire img{
     width: 100px;
     height: 100px;
-    margin: 10px;
+    margin: 5px;
     background-image: url(./background_type/fire.gif);
     background-size: contain;
     background-repeat: no-repeat;
+    border: 2px solid rgba(177, 177, 177, 0.89);
+    position: relative;
 }
 .water img{
     width: 100px;
     height: 100px;
-    margin: 10px;
+    margin: 5px;
     background-image: url(./background_type/water.gif);
     background-size: contain;
     background-repeat: no-repeat;
+    border: 2px solid rgba(177, 177, 177, 0.89);
+    position: relative;
 }
 .rock img{
     width: 100px;
     height: 100px;
-    margin: 10px;
+    margin: 5px;
     background-image: url(./background_type/rock.jpg);
-    background-size: contain;
     background-repeat: no-repeat;
+    border: 2px solid rgba(177, 177, 177, 0.89);
+    position: relative;
 }
 .plant img{
     width: 100px;
     height: 100px;
     margin: 5px;
     background-image: url(./background_type/plant.png);
-    background-size: contain;
     background-repeat: no-repeat;
+    border: 2px solid rgba(177, 177, 177, 0.89);
+    position: relative;
 }
 #pickACard {
     width: 100px;
@@ -41,22 +48,7 @@
     align-items: center;
     text-align: center;
 }
-aside {
-    display: flex;
-    float: left;
-}
-#battleField {
-    position: absolute;
-    height: 400px;
-    width: 1200px;
-    margin: 100px;
 
-}
-h1 {
-    width: 100px;
-    font-size: 12px;
-    text-align: center;
-}
 
 #fiveNewCards {
     display: flex;
@@ -82,15 +74,55 @@ h1 {
               transform: rotateX(0deg);
     }
 }
-.deck {
+#fire {
     width: 120px;
     height: 200px;
-    background: rgba(255, 255, 255, 0.863);
+    background: rgb(255, 118, 118);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
     margin: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    color: rgba(95, 95, 95, 0.89);
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
+#water {
+    width: 120px;
+    height: 200px;
+    background: rgb(118, 193, 255);
+    border: 3px solid rgba(255, 230, 0, 0.89);
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    color: rgba(95, 95, 95, 0.89);
+    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+#plant {
+    width: 120px;
+    height: 200px;
+    background: rgb(111, 204, 116);
+    border: 3px solid rgba(255, 230, 0, 0.89);
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    color: rgba(95, 95, 95, 0.89);
+    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+#rock {
+    width: 120px;
+    height: 200px;
+    background: rgba(209, 158, 91, 0.945);
+    border: 3px solid rgba(255, 230, 0, 0.89);
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: center;
+    box-sizing: border-box;
+    color: rgba(95, 95, 95, 0.89);
+    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
 img {
     width: 100px;
 }
@@ -104,9 +136,31 @@ img {
 }
 
 #ennemyBot div {
-    width: 100px;
-    height: 140px;
-    border: 3px solid darkblue;;
-    border-radius: 8px;
+    width: 120px;
+    height: 180px;
     margin: 10px;
+}
+.name {
+    display: flex;
+    margin: 0px 5px -15px 5px;
+    justify-content: space-between;
+}
+h1 {
+    font-size: 12px;
+    margin: 5px 3px 8px 3px;
+}
+h2 {
+    font-size: 10px;
+    margin: 100px 10px 15px 10px;
+}
+.cardDescription {
+    display: flex;
+    flex-direction: column;
+    margin: -90px 0px;
+}
+.description {
+    display: flex;
+    justify-content: space-between;
+    margin: -10px 10px -100px 10px;
+    
 }

@@ -4,11 +4,13 @@ import { allTheCards } from "./list_pokemon.js";
 // Holder & arrival declaration
 const cardPicker = document.getElementById("pickACard");
 const yourDeck = document.getElementById("fiveNewCards");
+const player = document.getElementById("inHand1");
 
 // Way to shuffle the decks to get a random hand
 const shuffler = document.getElementById('shuffle');
 let allyDeck = [...allTheCards];
 let ennemyDeck = [...allTheCards];
+
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -63,13 +65,36 @@ function fiveNewCards() {
         const newDiv = document.createElement("div");
         console.log('you clicked it');
         newDiv.innerHTML = 
-        `<div class="deck">
-            <div class=${allyDeck[countClickPickedCard-1].type} id="picked${countClickPickedCard}">
-                <p>HP ${allyDeck[countClickPickedCard-1].hp}</p>
-                <img src=${allyDeck[countClickPickedCard-1].image}>
+        `<div id=${allyDeck[countClickPickedCard-1].type} class="player">
+            <div class="name">
+                <h1>${allyDeck[countClickPickedCard-1].name}</h1>
+                <h1>HP.${allyDeck[countClickPickedCard-1].hp}</h1>
             </div>
-            <h1>${allyDeck[countClickPickedCard-1].name}</h1>
-        </div>`;
+            <div class=${allyDeck[countClickPickedCard-1].type}>
+            <img src=${allyDeck[countClickPickedCard-1].image}>
+        </div>
+
+        <div class="cardDescription">
+            <div class="description">
+                <h2>Att. spe.</h2>
+                <h2>${allyDeck[countClickPickedCard-1].attackType}</h2>
+            </div>
+
+            <div class="description">
+                <h2>Attaque</h2>
+                <h2>${allyDeck[countClickPickedCard-1].attack}</h2>
+            </div>
+
+            <div class="description">
+                <h2>Soin</h2>
+                <h2>${allyDeck[countClickPickedCard-1].healing}</h2>
+            </div>
+            <div class="description">
+                <h2>Vol de vie</h2>
+                <h2>${allyDeck[countClickPickedCard-1].thief}</h2>
+            </div>
+        </div>  
+    </div>`;
         yourDeck.appendChild(newDiv);
         return countClickPickedCard
     }
@@ -82,7 +107,17 @@ cardPicker.onclick = function(){
     countClickPickedCard++;
 }
 
-// Function to set the hand of both the ally and the ennemy
+// Function to choose the player still to work on tomorrow
+let ally = [];
+let ennemy = [];
+// Turn 
+/* function turn(clbk) {
+if (ally.speed > ennemy.speed) {
+    clbk(allyAttack)
+}
+else {
+    clbk(ennemyAttack)
+}}; */
 
 
 // Event Listener

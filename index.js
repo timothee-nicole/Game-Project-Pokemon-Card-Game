@@ -1,119 +1,106 @@
-// IMPORT 
-import { allTheCards } from "./list_pokemon.js"
-console.log(allTheCards)
+// IMPORT
+import { allTheCards } from "./list_pokemon.js";
+
 // Holder & arrival declaration
 const cardPicker = document.getElementById("pickACard");
 const yourDeck = document.getElementById("fiveNewCards");
 
-
-
-// Decks copies and shuffles with buttons [THAT'S GOOOOOOOD BROOOOOO]
-const shuffler = document.getElementById('shuffle')
+// Way to shuffle the decks to get a random hand
+const shuffler = document.getElementById('shuffle');
 let allyDeck = [...allTheCards];
 let ennemyDeck = [...allTheCards];
+
 function shuffle(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
+    };
 };
 let countClickShuffle = 0;
+let allyHand = [];
+let ennemyHand = [];
+let allyHandSpeed = 0;
+let ennemyHandSpeed = 0;
 
-function shuffleTheDecks() {
+
+function shuffleAllyDeck(callback) {
     if (countClickShuffle < 1) {
         for (let i=0; i < 100; i++) 
-        {shuffle(allyDeck); console.log(allyDeck)};
-        let allyHand = allyDeck.slice(0,5);
-        console.log(allyHand)
-        return allyHand
+        {shuffle(allyDeck)}; // console.log(allyDeck)};
+        allyHand = allyDeck.slice(0,5);
+        console.log('Ally Hand >>> ',allyHand);
+        return allyHand;
     }
     else 
     {
-        console.log('nop')
+        console.log("You can't shuffle the card deck more than one time");
+    };
+};
+
+function shuffleEnnemyDeck() {
+    if (countClickShuffle < 1) {
+        for (let i=0; i < 100; i++) 
+        {shuffle(ennemyDeck)}; // console.log(ennemyDeck)};
+        ennemyHand = ennemyDeck.slice(0,5);
+        console.log('Ennemy Hand >>> ',ennemyHand);
+        return ennemyHand;
     }
-}
+    else 
+    {
+        console.log("You can't shuffle the card deck more than one time");
+    }
+};
+
 shuffler.onclick = function(){
-    countClickShuffle++;
+    countClickShuffle += 0.5;
 }
 // Function to know which player will attack first // Have to ask teacher for help
-const reducer = (acc, currVal) => acc + currVal;
-function defineSpeed(hand) {
-    hand.reduce(reducer, 0)
-    return acc
-}
-
-defineSpeed(allyHand)
-defineSpeed(ennemyHand)
-
-function whoStarts() {
-    if (defineSpeed(allyHand) < defineSpeed(ennemyHand))
-    {console.log('the ennemy start')}
-    else {console.log('You can start')} 
-};
-whoStarts(); */
-
-let allyHand = allyDeck.slice(0,65;
-console.log(allyHand)
-let ennemyHand = ennemyDeck.slice(0,5);
-
-
-//ennemyDeck.map(toHand(ennemyHand, ennemyDeck));
-console.log("Ally Hand >>> ", allyHand)
-console.log("Ennemy Hand >>> ", ennemyHand)
-
-
-shuffler.addEventListener("click", shuffleTheDecks);
-console.log("The player Deck >>> ", allyDeck);
-
-// Function of what appears 
+// Function to pick the cards in your hands and add it to the html
 let countClickPickedCard = 0
-
 
 function fiveNewCards() {
     if (countClickPickedCard <= 5) 
     {
-    const newDiv = document.createElement("div");
-    console.log('you clicked it');
-
-
-    // newDiv.innerHTML = `<div id="picked${countClickPickedCard}" class="deck"> <p class="pokemonName"></p> <img src="./images/image${Math.round((Math.random()*35)+1)}.png"></div>`;
-    newDiv.innerHTML = 
-    `<div class="deck">
-        <div class=${allyDeck[countClickPickedCard-1].type} id="picked${countClickPickedCard}">
-            <p>HP ${allyDeck[countClickPickedCard-1].hp}</p>
+        const newDiv = document.createElement("div");
+        console.log('you clicked it');
+        newDiv.innerHTML = 
+        `    <div class=${allyDeck[countClickPickedCard-1].type}>
+        <div class="name"><h1>${allyDeck[countClickPickedCard-1].name}</h1><h1>HP.${allyDeck[countClickPickedCard-1].hp}</h1></div>
+        <div class=${allyDeck[countClickPickedCard-1].type} >
             <img src=${allyDeck[countClickPickedCard-1].image}>
         </div>
-        <h1>${allyDeck[countClickPickedCard-1].name}</h1>
+            <div class="cardDescription">
+            <div class="description">
+                <h2>Att. spe. <h2>${allyDeck[countClickPickedCard-1].attackType}</h2></h2>
+            </div>
+            <div class="description">
+                <h2>Attaque<h2>${allyDeck[countClickPickedCard-1].attack}</h2></h2>
+            </div>
+            <div class="description">
+                <h2>Soin<h2>${allyDeck[countClickPickedCard-1].healing}</h2></h2>
+            </div>
+            <div class="description">
+                <h2>Vol de vie<h2>${allyDeck[countClickPickedCard-1].thief}</h2></h2>
+            </div>
+        </div>  
     </div>`;
-
-    // console.log(cardPicker)
-    yourDeck.appendChild(newDiv);
-    // console.log(countClickPickedCard)
-
+        yourDeck.appendChild(newDiv);
+        return countClickPickedCard
     }
     else 
     {
        console.log("You Cannot Get more than 5 cards you bitch")
     };
 };
-
-
-allyHand.push(allyDeck[countClickPickedCard-1])
-console.log(allyHand)
-
-//nconst theChosenOne = document.getElementById("picked1")
-
 cardPicker.onclick = function(){
     countClickPickedCard++;
 }
+// allyDeck[countClickPickedCard-1].image
+// Function to set the hand of both the ally and the ennemy
 
 
-// pour les fleches console.dir($0)
-//EVENT
-
-
-//function clickForEachCardInGame () {
-//    document.addEventListener("click", bringForward)
-//}
-
+// Event Listener
 cardPicker.addEventListener("click", fiveNewCards);
+shuffler.addEventListener("click", shuffleAllyDeck);
+shuffler.addEventListener("click", shuffleEnnemyDeck);
+
