@@ -124,3 +124,18 @@ else {
 cardPicker.addEventListener("click", fiveNewCards);
 shuffler.addEventListener("click", shuffleAllyDeck);
 shuffler.addEventListener("click", shuffleEnnemyDeck);
+document.onkeyup = (evt) => {
+    if (evt.keyCode === 37) {
+        console.log('Left')
+    } 
+    else if (evt.keyCode === 38) {
+        console.log('Up')
+    }
+  
+    else if (evt.keyCode === 39) {
+        console.log('Right')
+    }
+    else if (evt.keyCode === 40) {
+        console.log('Down')
+  }
+}; 

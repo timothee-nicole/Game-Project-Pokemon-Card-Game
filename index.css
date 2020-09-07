@@ -1,4 +1,8 @@
+body {
+    background: url(./images_html/background.jpg);
+    background-repeat: no-repeat;
 
+}
 .fire img{
     width: 100px;
     height: 100px;
@@ -38,25 +42,41 @@
     position: relative;
 }
 #pickACard {
-    width: 100px;
-    height: 140px;
+    width: 120px;
+    height: 170px;
     border-radius: 8px;
     display: flex;
-    margin: 60px 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px 5px;
+}
+.deckNShuffle {
+    width: 140px;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-
-
+.attackTool {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.attackTool img {
+    width: 70px;
+}
 #fiveNewCards {
     display: flex;
-    float: center;
-    justify-content: space-evenly;
-    align-items: right;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
     flex-wrap: wrap;
-    margin: 20px 10px;
+    margin: 0px 20px;
+    padding: 30px;
 }
 
 @keyframes flip-horizontal-bottom {
@@ -80,7 +100,7 @@
     background: rgb(255, 118, 118);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 10px;
+    margin: 0px 20px;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -92,7 +112,7 @@
     background: rgb(118, 193, 255);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -104,7 +124,7 @@
     background: rgb(111, 204, 116);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -116,29 +136,31 @@
     background: rgba(209, 158, 91, 0.945);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 10px;
+    margin: 20px;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 
-img {
-    width: 100px;
-}
+
 #ennemyBot {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    align-items:  center;
     flex-wrap: wrap;
-    margin: 20px 10px;
+    margin: 20px;
+    padding: 30px;
 }
-
-#ennemyBot div {
+.teamRocket {
+    width: 100px;  
+    height: 100px;
+    margin: 10px 80px 30px 40px;
+}
+#ennemyBot img {
     width: 120px;
-    height: 180px;
-    margin: 10px;
+    margin: 20px;
 }
 .name {
     display: flex;
@@ -163,4 +185,38 @@ h2 {
     justify-content: space-between;
     margin: -10px 10px -100px 10px;
     
+}
+#battleField {
+    background-image:url(./background_type/arena_2000w.jpg);
+    background-position: center ;
+    background-size: 800px;
+    width: 800px;
+    height: 500px;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 0px 0px 100px;
+}
+.battleSpot {
+    border: 2px dashed black;
+    background-color: rgba(204, 204, 204, 0.5);
+    width: 120px;
+    height: 200px;
+}
+.center {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+h3 {
+    color:black;
+    background: rgba(255, 255, 255, 0.644);
+    margin: 5px 10px;
+    padding: 3px;
+    font-size: 15px;
+}
+.sacha {
+    width: 130px;
+    margin: 10px 80px 30px 40px;
 }
