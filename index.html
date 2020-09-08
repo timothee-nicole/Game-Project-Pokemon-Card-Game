@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A not so simple widget</title>
+    <title>The Pokemon Card Game</title>
     <link rel="stylesheet" href="./index.css">
-    <script src="./clean.js" type="module"></script>
+    <script src="./index.js" type="module"></script>
 </head>
 <body> 
     <section id="ennemyBot">
-        <div class="teamRocket">
+        <div id="teamRocket">
             <img src="./images_html/team_rocket.jpg" alt="Ennemy Icon">
         </div>
-        <div>
+        <div id="toRemove">
             <img src="./images_html/verso_carte.png" alt="verso carte pokemon">
         </div>
-        <div>
+        <div id="toRemove">
             <img src="./images_html/verso_carte.png" alt="verso carte pokemon">
         </div>
-        <div>
+        <div id="toRemove">
             <img src="./images_html/verso_carte.png" alt="verso carte pokemon">
         </div>
-        <div>
+        <div id="toRemove">
             <img src="./images_html/verso_carte.png" alt="verso carte pokemon">
         </div>
-        <div>
+        <div id="toRemove">
             <img src="./images_html/verso_carte.png" alt="verso carte pokemon">
         </div>
     </section>
@@ -39,8 +39,8 @@
     </aside>
     <!-- Battlefield where player are facing with each card -->
     <section id="battleField">
-        <div class="battleSpot"></div>
-        <div class="battleSpot"></div>
+        <div class="battleSpot ally" id="target">Drag your Pokemon Here</div>
+        <div class="battleSpot ennemy"></div>
 
     </section>
     <section class="attackTool">

@@ -78,7 +78,6 @@ body {
     margin: 0px 20px;
     padding: 30px;
 }
-
 @keyframes flip-horizontal-bottom {
     0% {
       -webkit-transform: rotateX(0);
@@ -142,8 +141,6 @@ body {
     color: rgba(95, 95, 95, 0.89);
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
-
-
 #ennemyBot {
     display: flex;
     flex-direction: row;
@@ -195,12 +192,15 @@ h2 {
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: space-evenly;
     margin: 0px 0px 0px 100px;
 }
 .battleSpot {
     border: 2px dashed black;
     background-color: rgba(204, 204, 204, 0.5);
+    display: flex;
+    align-items: center;
     width: 120px;
     height: 200px;
 }
@@ -208,6 +208,7 @@ h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 h3 {
     color:black;
