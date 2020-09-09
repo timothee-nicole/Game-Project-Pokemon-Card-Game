@@ -5,11 +5,8 @@ import { allTheCards } from "./list_pokemon.js";
 const cardPicker = document.getElementById("pickACard");
 const newCardsAlly = document.getElementById("fiveNewCardsAlly");
 const newCardsEnnemy = document.getElementById("fiveNewCardsEnnemy")
-const ennemyBattleSpot = document.querySelector(".battleSpot .ennemy")
-const allyBattleSpot = document.querySelector("#target")
 
 // Way to shuffle the decks to get a random hand
-const shuffler = document.getElementById('shuffle');
 let allyDeck = [...allTheCards];
 let ennemyDeck = [...allTheCards];
 
@@ -162,71 +159,72 @@ cardPicker.addEventListener("click", fiveNewCardsEnnemy)
 // Function  for spec attack with strenght and weaknesses
 function attackSpe(playerOne, playerTwo) {
     if (playerOne[0].type === 'fire' && playerTwo[0].type ==='plant') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*1.2)
     }
     else if (playerOne[0].type === 'fire' && playerTwo.type ==='water') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*0.8)
     }
     else if (playerOne[0].type === 'water' && playerTwo.type ==='fire') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*1.2)
     }
     else if (playerOne[0].type === 'water' && playerTwo.type ==='rock') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*0.8)
     }
     else if (playerOne[0].type === 'plant' && playerTwo.type ==='rock') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*1.2)
     }
     else if (playerOne[0].type === 'plant' && playerTwo.type ==='fire') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*0.8)
     }
     else if (playerOne[0].type === 'rock' && playerTwo.type ==='water') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*1.2)
     }
     else if (playerOne[0].type === 'rock' && playerTwo.type ==='plant') {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - (playerOne[0].attackType*0.8)
     }
     else {
-        console.log(`${playerOne[0]} has done an Att. Spe`)
+        console.log(`${playerOne[0].name} has done an Att. Spe`)
         return playerTwo[0].hp = playerTwo[0].hp - playerOne[0].attackType
     }
 };
 
 // Function for the casual attack
 function casualAttack(playerOne, playerTwo) {
-    console.log(`${playerOne[0]} has done an Att.`)
+    console.log(`${playerOne[0].name} has done an Att.`, `${playerOne[0].name} hp = ${playerOne[0].hp} & ${playerTwo[0].name} hp = ${playerTwo[0].hp}`)
     return playerTwo[0].hp = playerTwo[0].hp - playerOne[0].attack;
 };
 
 // Function for healing
 function healing(playerOne) {
-    console.log(`${playerOne[0]} has been healed`)
+    console.log(`${playerOne[0].name} has been healed`, `${playerOne[0].name} hp = ${playerOne[0].hp}`)
     return playerOne[0].hp = playerOne[0].hp + playerOne[0].healing;
 };
 
 // Function for the attack that steal ennemy's HP 1/2
 function stealYourEnnemy(playerOne, playerTwo) {
-    console.log(`${playerOne[0]} has stolen hp to ${playerTwo}`)
+    console.log(`${playerOne[0].name} has stolen hp to ${playerTwo[0].name}`, `${playerOne[0].name} hp = ${playerOne[0].hp} & ${playerTwo[0].name} hp = ${playerTwo[0].hp}`)
     playerOne[0].hp = playerOne[0].hp + (playerOne[0].thief/2);
     return playerTwo[0].hp = playerTwo[0].hp - playerOne[0].thief
 };
 
 // Function for the Bot to attack randomly, AI they said...
 function randomEnnemyAttack(ennemyHand, allyHand) {
-    console.log(`${ennemyHand[0]} has chosen its attack`);
-    let n = Math.floor((Math.random() * 3) + 1);
+    console.log(`${ennemyHand[0].name} has chosen its attack`);
+    let n = Math.floor((Math.random() * 100) + 1);
     n = 1 ?  stealYourEnnemy(ennemyHand, allyHand) : n = 2 ? casualAttack(ennemyHand, allyHand) : n = 3 ? attackSpe(ennemyHand, allyHand) : healing(ennemyHand);
+    return n = Math.floor((Math.random() * 3) + 1);
 }
 // Function to replace dead pokemon
 function deadToNewOne(player) {
-    console.log(`${player[0]} is dead`);
+    console.log(`${player[0].name} is dead`);
     return player.shift()
 }
 
@@ -235,21 +233,21 @@ function chooseYourAction(allyHand, ennemyHand) {
         window.onkeyup = (evt) => {
             console.log(evt);
             if (evt.keyCode === 37) {
-                success(stealYourEnnemy(allyHand, ennemyHand));
-                console.log('Left')
+                success(console.log('foo'));
+                console.log('Left');
             }
             else if (evt.keyCode === 38) {
                 success(attackSpe(allyHand, ennemyHand));
-                console.log('Up')
+                console.log('Up');
             }
 
             else if (evt.keyCode === 39) {
                 success(casualAttack(allyHand, ennemyHand));
-                console.log('Right')
+                console.log('Right');
             }
             else if (evt.keyCode === 40) {
                 success(healing(allyHand));
-                console.log('Down')
+                console.log('Down');
             };
         };
     });
@@ -265,20 +263,21 @@ async function game(allyHand, ennemyHand) {
                     deadToNewOne(allyHand)
                 };
     
-                var allyActionWithKeyboard = await chooseYourAction(allyHand, ennemyHand);
-                allyActionWithKeyboard()
+                const resultat = await chooseYourAction(allyHand, ennemyHand);
+                console.log(resultat);
 
 
-                if (ennemyHand.hp <= 0) {
+                if (ennemyHand[0].hp <= 0) {
                         deadToNewOne(ennemyHand)
-                };
+                } else {'ennemy is still alive'}
             }
             else {
                 console.log('ally starts')
-                const allyActionWithKeyboard = await chooseYourAction(allyHand, ennemyHand);
-                allyActionWithKeyboard()
+                const resultat = await chooseYourAction(allyHand, ennemyHand);
+                resultat
+                console.log('le resultat est ', resultat);
 
-                if (ennemyHand.hp <= 0) {
+                if (ennemyHand[0].hp <= 0) {
                         deadToNewOne(ennemyHand)
                     };
                 
@@ -289,6 +288,7 @@ async function game(allyHand, ennemyHand) {
                 };
             
             }
+        console.log(ennemyHand[0].hp)
     }
     while (allyHand.length > 0 || ennemyHand.length > 0)
 };
