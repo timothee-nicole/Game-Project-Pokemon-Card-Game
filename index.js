@@ -218,9 +218,8 @@ function stealYourEnnemy(playerOne, playerTwo) {
 // Function for the Bot to attack randomly, AI they said...
 function randomEnnemyAttack(ennemyHand, allyHand) {
     console.log(`${ennemyHand[0].name} has chosen its attack`);
-    let n = Math.floor((Math.random() * 100) + 1);
-    n = 1 ?  stealYourEnnemy(ennemyHand, allyHand) : n = 2 ? casualAttack(ennemyHand, allyHand) : n = 3 ? attackSpe(ennemyHand, allyHand) : healing(ennemyHand);
-    return n = Math.floor((Math.random() * 3) + 1);
+    let n = 3;
+    n = 1 ? casualAttack(ennemyHand, allyHand) : n = 2 ? stealYourEnnemy(ennemyHand, allyHand) : n = 3 ? attackSpe(ennemyHand, allyHand) : healing(ennemyHand);
 }
 // Function to replace dead pokemon
 function deadToNewOne(player) {
@@ -234,20 +233,20 @@ function chooseYourAction(allyHand, ennemyHand) {
             console.log(evt);
             if (evt.keyCode === 37) {
                 success(console.log('foo'));
-                console.log('Left');
+                //console.log('Left');
             }
             else if (evt.keyCode === 38) {
                 success(attackSpe(allyHand, ennemyHand));
-                console.log('Up');
+                //console.log('Up');
             }
 
             else if (evt.keyCode === 39) {
                 success(casualAttack(allyHand, ennemyHand));
-                console.log('Right');
+                //console.log('Right');
             }
             else if (evt.keyCode === 40) {
                 success(healing(allyHand));
-                console.log('Down');
+                //console.log('Down');
             };
         };
     });
