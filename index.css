@@ -1,12 +1,14 @@
 body {
-    background: url(./images_html/background.jpg);
+    background: url(./images_html/background2.jpg);
+    background-size: 100vw;
     background-repeat: no-repeat;
+    display: flex;
 
 }
 .fire img{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 5.7vw;
+    height: 5.7vw;
+    margin: 0.35vw;
     background-image: url(./background_type/fire.gif);
     background-size: contain;
     background-repeat: no-repeat;
@@ -14,9 +16,9 @@ body {
     position: relative;
 }
 .water img{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 5.7vw;
+    height: 5.7vw;
+    margin: 0.35vw;
     background-image: url(./background_type/water.gif);
     background-size: contain;
     background-repeat: no-repeat;
@@ -24,18 +26,18 @@ body {
     position: relative;
 }
 .rock img{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 5.7vw;
+    height: 5.7vw;
+    margin: 0.35vw;
     background-image: url(./background_type/rock.jpg);
     background-repeat: no-repeat;
     border: 2px solid rgba(177, 177, 177, 0.89);
     position: relative;
 }
 .plant img{
-    width: 100px;
-    height: 100px;
-    margin: 5px;
+    width: 5.7vw;
+    height: 5.7vw;
+    margin: 0.35vw;
     background-image: url(./background_type/plant.png);
     background-repeat: no-repeat;
     border: 2px solid rgba(177, 177, 177, 0.89);
@@ -53,28 +55,36 @@ body {
     margin: 10px 5px;
 }
 .deckNShuffle {
-    width: 140px;
+    width: 20vw;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 }
 .attackTool {
+    width: 20vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 .attackTool img {
-    width: 70px;
+    width: 4vw;
 }
-#fiveNewCards {
+#fiveNewCardsAlly {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items:  center;
-    flex-wrap: wrap;
+    margin: -70px 20px;
+    padding: 30px;
+}
+#fiveNewCardsEnnemy {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
     margin: 0px 20px;
     padding: 30px;
 }
@@ -94,8 +104,8 @@ body {
     }
 }
 #fire {
-    width: 120px;
-    height: 200px;
+    width: 7vw;
+    height: 11vw;
     background: rgb(255, 118, 118);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
@@ -106,8 +116,8 @@ body {
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 #water {
-    width: 120px;
-    height: 200px;
+    width: 7vw;
+    height: 11vw;
     background: rgb(118, 193, 255);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
@@ -118,8 +128,8 @@ body {
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 #plant {
-    width: 120px;
-    height: 200px;
+    width: 7vw;
+    height: 11vw;
     background: rgb(111, 204, 116);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
@@ -130,8 +140,8 @@ body {
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
 #rock {
-    width: 120px;
-    height: 200px;
+    width: 7vw;
+    height: 11vw;
     background: rgba(209, 158, 91, 0.945);
     border: 3px solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
@@ -141,23 +151,10 @@ body {
     color: rgba(95, 95, 95, 0.89);
     animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
 }
-#ennemyBot {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items:  center;
-    flex-wrap: wrap;
-    margin: 20px;
-    padding: 30px;
-}
 .teamRocket {
     width: 100px;  
     height: 100px;
     margin: 10px 80px 30px 40px;
-}
-#ennemyBot img {
-    width: 120px;
-    margin: 20px;
 }
 .name {
     display: flex;
@@ -165,12 +162,12 @@ body {
     justify-content: space-between;
 }
 h1 {
-    font-size: 12px;
-    margin: 5px 3px 8px 3px;
+    font-size: 0.7vw;
+    margin: 5px 3px 11px 3px;
 }
 h2 {
-    font-size: 10px;
-    margin: 100px 10px 15px 10px;
+    font-size: 0.65vw;
+    margin: 100px 5px 12px 0px;
 }
 .cardDescription {
     display: flex;
@@ -180,21 +177,18 @@ h2 {
 .description {
     display: flex;
     justify-content: space-between;
-    margin: -10px 10px -100px 10px;
+    width: 5.9vw;
+    margin: -11px 10px -102px 10px;
     
 }
-#battleField {
-    background-image:url(./background_type/arena_2000w.jpg);
-    background-position: center ;
-    background-size: 800px;
-    width: 800px;
-    height: 500px;
-    background-repeat: no-repeat;
+.battleField {
+    width: 60vw;
+    height: 52vw;
     display: flex;
+    flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: space-evenly;
-    margin: 0px 0px 0px 100px;
 }
 .battleSpot {
     border: 2px dashed black;
@@ -204,9 +198,9 @@ h2 {
     width: 120px;
     height: 200px;
 }
-.center {
+.battleField {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -219,5 +213,10 @@ h3 {
 }
 .sacha {
     width: 130px;
-    margin: 10px 80px 30px 40px;
+    margin: 10px 0px 30px 40px;
+}
+.textInput {
+    background-color: rgb(255, 246, 198);
+    width: 16vw;
+    border: 3px solid grey
 }

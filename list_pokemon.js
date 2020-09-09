@@ -396,7 +396,7 @@ export let allTheCards = [
         speed : 40
     },   
 ]
-/* const mewtwo : new Pokemon (
+/* const mewtwo : new Pokemon 
     {
         name : '#mewtoo',
         image : "./images/image37.png",
@@ -407,7 +407,8 @@ export let allTheCards = [
         healing : 30,
         thief : 40,
         speed : 50,
-    ) */
+    }
+] */
 
 
 
