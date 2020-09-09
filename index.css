@@ -5,6 +5,16 @@ body {
     display: flex;
 
 }
+.storytime {
+    background: rgba(255, 212, 169, 0.7);
+    border: 2px solid rgb(105, 54, 2);
+}
+.storytime p {
+    font-size: 1vw;
+}
+.storytime h4 {
+    font-size: 1.3vw;
+}
 .fire img{
     width: 5.7vw;
     height: 5.7vw;
@@ -58,9 +68,9 @@ body {
     width: 20vw;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
     text-align: center;
+    margin: -1vw;
 }
 .attackTool {
     width: 20vw;

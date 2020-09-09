@@ -5,6 +5,8 @@ import { allTheCards } from "./list_pokemon.js";
 const cardPicker = document.getElementById("pickACard");
 const newCardsAlly = document.getElementById("fiveNewCardsAlly");
 const newCardsEnnemy = document.getElementById("fiveNewCardsEnnemy")
+const startGame = document.getElementById("startGame")
+
 
 // Way to shuffle the decks to get a random hand
 let allyDeck = [...allTheCards];
@@ -49,6 +51,7 @@ function shuffleEnnemyDeck() {
         console.log("You can't shuffle the card deck more than one time");
     }
 };
+
 shuffleEnnemyDeck()
 
 
@@ -60,12 +63,12 @@ let countClickPickedCard = 0
 function fiveNewCardsAlly() {
     if (countClickPickedCard <= 5) {
         const newDiv = document.createElement("div");
-        console.log('you clicked it');
+        // console.log('you clicked it');
         newDiv.innerHTML =
-        `<div id=${allyHand[countClickPickedCard -1].type} draggable="true" type="text" class="player">
+        `<div id=${allyHand[countClickPickedCard -1].type} draggable="true" type="text" class="ally${allyHand[countClickPickedCard - 1].name}">
         <div class="name">
                 <h1>${allyHand[countClickPickedCard - 1].name}</h1>
-                <h1>HP.${allyHand[countClickPickedCard - 1].hp}</h1>
+                <h1 id=ally${allyHand[countClickPickedCard - 1].name}>HP.${allyHand[countClickPickedCard - 1].hp}</h1>
             </div>
             <div class=${allyHand[countClickPickedCard - 1].type}>
             <img src=${allyHand[countClickPickedCard - 1].image}>
@@ -104,34 +107,35 @@ function fiveNewCardsAlly() {
 function fiveNewCardsEnnemy() {
     if (countClickPickedCard <= 5) {
         const newDiv = document.createElement("div");
+        let cardToDisplay = ennemyHand[countClickPickedCard - 1]
         newDiv.innerHTML =
-            `<div id=${ennemyHand[countClickPickedCard - 1].type} type="text" class="player">
+            `<div id=${cardToDisplay.type} type="text" class="player">
                 <div class="name">
-                    <h1>${ennemyHand[countClickPickedCard - 1].name}</h1>
-                    <h1>HP.${ennemyHand[countClickPickedCard - 1].hp}</h1>
+                    <h1>${cardToDisplay.name}</h1>
+                    <h1 id=ennemy${cardToDisplay.name}>HP.${cardToDisplay.hp}</h1>
                 </div>
-                <div class=${ennemyHand[countClickPickedCard - 1].type}>
-                <img src=${ennemyHand[countClickPickedCard - 1].image}>
+                <div class=${cardToDisplay.type}>
+                <img src=${cardToDisplay.image}>
             </div>
 
             <div class="cardDescription">
                 <div class="description">
                     <h2>Att. spe.</h2>
-                    <h2>${ennemyHand[countClickPickedCard - 1].attackType}</h2>
+                    <h2>${cardToDisplay.attackType}</h2>
                 </div>
 
                 <div class="description">
                     <h2>Attaque</h2>
-                    <h2>${ennemyHand[countClickPickedCard - 1].attack}</h2>
+                    <h2>${cardToDisplay.attack}</h2>
                 </div>
 
                 <div class="description">
                     <h2>Soin</h2>
-                    <h2>${ennemyHand[countClickPickedCard - 1].healing}</h2>
+                    <h2>${cardToDisplay.healing}</h2>
                 </div>
                 <div class="description">
                     <h2>Vol de vie</h2>
-                    <h2>${ennemyHand[countClickPickedCard - 1].thief}</h2>
+                    <h2>${cardToDisplay.thief}</h2>
                 </div>
             </div> 
 
@@ -142,18 +146,13 @@ function fiveNewCardsEnnemy() {
 
     }
 }
-cardPicker.onclick = function () {
-    countClickPickedCard++;
-}
-
-// Event Listener for the shuffle
-// shuffler.addEventListener("click", shuffleAllyDeck);
-// shuffler.addEventListener("click", shuffleEnnemyDeck);
 
 // Two event listener, one for the card to pick from the deck to the hands and one for dragging the newly created cards
-cardPicker.addEventListener("click", fiveNewCardsAlly)
-cardPicker.addEventListener("click", fiveNewCardsEnnemy)
-
+function onCardPickerClick () {
+    countClickPickedCard++;
+    fiveNewCardsAlly()
+    fiveNewCardsEnnemy()
+}
 
 // Fight Functions >>>
 // Function  for spec attack with strenght and weaknesses
@@ -218,9 +217,10 @@ function stealYourEnnemy(playerOne, playerTwo) {
 // Function for the Bot to attack randomly, AI they said...
 function randomEnnemyAttack(ennemyHand, allyHand) {
     console.log(`${ennemyHand[0].name} has chosen its attack`);
-    let n = 3;
-    n = 1 ? casualAttack(ennemyHand, allyHand) : n = 2 ? stealYourEnnemy(ennemyHand, allyHand) : n = 3 ? attackSpe(ennemyHand, allyHand) : healing(ennemyHand);
+    let n = Math.floor(Math.random() * 3 + 1); console.log('n = ',n);
+    n === 1 ? casualAttack(ennemyHand, allyHand) : n === 2 ? stealYourEnnemy(ennemyHand, allyHand) : n === 3 ? attackSpe(ennemyHand, allyHand) : healing(ennemyHand);
 }
+
 // Function to replace dead pokemon
 function deadToNewOne(player) {
     console.log(`${player[0].name} is dead`);
@@ -232,7 +232,7 @@ function chooseYourAction(allyHand, ennemyHand) {
         window.onkeyup = (evt) => {
             console.log(evt);
             if (evt.keyCode === 37) {
-                success(console.log('foo'));
+                success(stealYourEnnemy(allyHand, ennemyHand));
                 //console.log('Left');
             }
             else if (evt.keyCode === 38) {
@@ -252,43 +252,61 @@ function chooseYourAction(allyHand, ennemyHand) {
     });
 };
 
+// function for the game and the turn by turn
 async function game(allyHand, ennemyHand) {
     do {
             if (allyHand[0].speed < ennemyHand[0].speed) {
                 console.log('Ennemy Starts')
                 randomEnnemyAttack(ennemyHand, allyHand);
+                document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.${allyHand[0].hp}`;
 
                 if (allyHand[0].hp <= 0) {
+                    document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.0`;
                     deadToNewOne(allyHand)
                 };
     
                 const resultat = await chooseYourAction(allyHand, ennemyHand);
+                resultat;
+                document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.${ennemyHand[0].hp}`;
+     
                 console.log(resultat);
-
-
                 if (ennemyHand[0].hp <= 0) {
+                    document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
                         deadToNewOne(ennemyHand)
                 } else {'ennemy is still alive'}
             }
             else {
                 console.log('ally starts')
                 const resultat = await chooseYourAction(allyHand, ennemyHand);
-                resultat
-                console.log('le resultat est ', resultat);
+                resultat;
+                document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.${ennemyHand[0].hp}`
 
                 if (ennemyHand[0].hp <= 0) {
-                        deadToNewOne(ennemyHand)
-                    };
-                
-                randomEnnemyAttack(ennemyHand,allyHand);
+                    document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
+                    deadToNewOne(ennemyHand)
 
+                    };
+                randomEnnemyAttack(ennemyHand,allyHand);
+                document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.${allyHand[0].hp}`;
+
+                
                 if (allyHand[0].hp <= 0){
+                    document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.0`;
                     deadToNewOne(allyHand)
                 };
             
             }
-        console.log(ennemyHand[0].hp)
+
     }
     while (allyHand.length > 0 || ennemyHand.length > 0)
 };
-game(allyHand, ennemyHand)
+
+function executeGame() {
+    game(allyHand, ennemyHand)
+}
+startGame.addEventListener("click", executeGame)  
+cardPicker.addEventListener("click", onCardPickerClick)
+
+
+
+
