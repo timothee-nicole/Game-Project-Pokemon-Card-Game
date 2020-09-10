@@ -301,7 +301,7 @@ async function game(allyHand, ennemyHand) {
                     deadToNewOne(allyHand);
 
                         if (allyHand.length) {
-                            document.querySelector(".textInput").textContent = `Your Pokemon was faster  thanJames' ${ennemyHand[0].name}. Your pokemon has attacked ${ennemyHand[0].name}  which is now at HP.${ennemyHand[0].hp}. But it seems that James trained well its {ennemyHand[0].name}, and he has killed your Pokémon. Hold on the fight cancontinue with the others! Please, choose your next attack!`
+                            document.querySelector(".textInput").textContent = `Your Pokemon was faster  thanJames' ${ennemyHand[0].name}. Your pokemon has attacked ${ennemyHand[0].name}  which is now at HP.${ennemyHand[0].hp}. But it seems that James trained well its ${ennemyHand[0].name}, and he has killed your Pokémon. Hold on the fight cancontinue with the others! Please, choose your next attack!`
                         }
                         else {
                         document.querySelector(".textInput").textContent = "Looks like James is in a bad Posture"
