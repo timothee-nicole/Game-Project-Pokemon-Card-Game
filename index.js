@@ -28,7 +28,7 @@ let ennemyHand = [];
 //Shuffle of the Ally Deck and call it to get the Hands
 function shuffleAllyDeck() {
     if (countClickShuffle < 1) {
-        for (let i = 0; i < 100; i++) { shuffle(allyDeck) }; // console.log(allyDeck)};
+        for (let i = 0; i < 1296; i++) { shuffle(allyDeck) }; // console.log(allyDeck)};
         allyHand = allyDeck.slice(0, 5);
         console.log('Ally Hand >>> ', allyHand);
         return allyHand;
