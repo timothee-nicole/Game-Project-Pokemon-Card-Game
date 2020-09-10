@@ -5,7 +5,6 @@
 /* CSS Styling*/
 * {
     box-sizing: border-box;
-    font-family: 'Space Mono', monospace;
 }
 body {
     background: url(./images_html/background2.jpg);
@@ -32,6 +31,8 @@ body {
 .storytime p {
     font-size: 0.6vw;
     padding: 0;
+    font-family: 'Space Mono', monospace;
+
 }
 #rules {
     background: rgba(240, 240, 240, 0.938);
@@ -57,6 +58,8 @@ body {
 }
 li {
     text-align: left;
+    font-family: 'Space Mono', monospace;
+
 }
 .fire img{
     width: 5.7vw;
@@ -128,6 +131,8 @@ li {
 }
 #rules p {
     font-size: 0.6vw;
+    font-family: 'Space Mono', monospace;
+
 }
 #rules li {
     font-size: 0.6vw;
@@ -148,21 +153,20 @@ li {
     margin: 0 2vw;
     padding: 30px;
 }
-@keyframes flip-horizontal-bottom {
+@keyframes rotate-scale-up {
     0% {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
+      -webkit-transform: scale(1) rotateZ(0);
+              transform: scale(1) rotateZ(0);
     }
     50% {
-        -webkit-transform: rotateX(-180deg);
-              transform: rotateX(-180deg);
-
+      -webkit-transform: scale(2) rotateZ(180deg);
+              transform: scale(2) rotateZ(180deg);
     }
     100% {
-      -webkit-transform: rotateX(0deg);
-              transform: rotateX(0deg);
+      -webkit-transform: scale(1) rotateZ(360deg);
+              transform: scale(1) rotateZ(360deg);
     }
-}
+  }
 #fire {
     width: 7vw;
     height: 11vw;
@@ -173,7 +177,7 @@ li {
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
-    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-scale-up 0.65s linear both;
 }
 #water {
     width: 7vw;
@@ -185,7 +189,7 @@ li {
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
-    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-scale-up 0.65s linear both;
 }
 #plant {
     width: 7vw;
@@ -197,7 +201,7 @@ li {
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
-    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-scale-up 0.65s linear both;
 }
 #rock {
     width: 7vw;
@@ -209,7 +213,7 @@ li {
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
-    animation: flip-horizontal-bottom 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+    animation: rotate-scale-up 0.65s linear both;
 }
 .teamRocket {
     width: 100px;  
@@ -257,6 +261,7 @@ h3 {
     margin: 1vw 1vw;
     padding: 0.2vw;
     font-size: 15px;
+    
 }
 .sacha {
     margin: 5vw 0px 5vw 1vw;
@@ -271,3 +276,7 @@ h3 {
     border: 3px solid grey;
     text-align: left;
 }
+a {
+    color: whitesmoke;
+}
+/*Start game Button*/
