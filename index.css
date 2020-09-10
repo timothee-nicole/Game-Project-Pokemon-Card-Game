@@ -34,6 +34,14 @@ body {
     font-family: 'Space Mono', monospace;
 
 }
+button {
+    color: rgb(255, 203, 5);
+    font-family: 'Space Mono', monospace;
+    background-color: rgb(38,116,178);
+    border: 1px solid rgb(255, 203, 5);
+    border-radius: 5px;
+    padding: 5px 20px;
+}
 #rules {
     background: rgba(240, 240, 240, 0.938);
     border: 0.1vw solid black;
@@ -56,10 +64,12 @@ body {
     font-weight: bold;
     color: rgb(111, 204, 116);
 }
+ol, ul {
+    padding-left: 20px;
+}
 li {
     text-align: left;
     font-family: 'Space Mono', monospace;
-
 }
 .fire img{
     width: 5.7vw;
@@ -142,7 +152,7 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items:  center;
-    margin: 0vw 2vw;
+    margin: -4vw 2vw;
     padding: 30px;
 }
 #fiveNewCardsEnnemy {

@@ -257,21 +257,29 @@ async function game(allyHand, ennemyHand) {
                     document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.0`;
                     deadToNewOne(allyHand)
                 };
-                console.log('ally', allyHand.length)
 
-                let resultat;
-                allyHand.length ? resultat = await chooseYourAction(allyHand, ennemyHand) :
-                resultat;
-                document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.${ennemyHand[0].hp}`;
-                if (ennemyHand[0].hp <= 0) {
-                    document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
-                        deadToNewOne(ennemyHand)
-                    
-                } 
-                //document.querySelector(".textInput").textContent = `James' ${ennemyHand[0].name} is faster than ${allyHand[0].name}. He has attacked your ${allyHand[0].name} which is now at HP.${allyHand[0].hp}. But it seems that even if ${allyHand[0].name} partied with you, he is still able to kick the ass of ${ennemyHand[0].name}, and return its HP to ${ennemyHand[0].hp}. Hold on the fight can continue! Please, choose your next attack!`
-                }
+                    let resultat;
+                    if (allyHand.length) {
+                        resultat = await chooseYourAction(allyHand, ennemyHand)
+                        resultat;
+                        document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.${ennemyHand[0].hp}`;
 
-            
+                        if (ennemyHand[0].hp <= 0) {
+                            document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
+                            deadToNewOne(ennemyHand)
+                        
+                            if (ennemyHand.length) {
+                                document.querySelector(".textInput").textContent = `James' Pokemon was faster than ${allyHand[0].name}. He has attacked your ${allyHand[0].name} which is now at HP.${allyHand[0].hp}. But it seems that even if ${allyHand[0].name} partied with you, he is still able to kick the ass of James' Pokemon, and return its HP to ${ennemyHand[0].hp}. Hold on the fight can continue! Please, choose your next attack!`
+                            }
+                            else {
+                            document.querySelector(".textInput").textContent = "Looks like you are in a bad Posture"
+                            } 
+                        } 
+                        else {
+                            document.querySelector(".textInput").textContent = `James' Pokemon was faster than your Pokemon. He has attacked your Pokemon which is now dead. But it seems that even if your Pokemons partied with you, they are still able to kick the ass of James' Pokemon, and return its HP to ${ennemyHand[0].hp}. Hold on the fight can continue with the others! Please, choose your next attack with ${allyHand[0].name}!`
+                        }
+                    }
+            }    
             else {
                 console.log('Ally starts')
                 const resultat = await chooseYourAction(allyHand, ennemyHand);
@@ -281,30 +289,41 @@ async function game(allyHand, ennemyHand) {
                 if (ennemyHand[0].hp <= 0) {
                     document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
                     deadToNewOne(ennemyHand)
-                    console.log(' ennemy',ennemyHand.length)
                     };
 
-                if (ennemyHand.length) { randomEnnemyAttack(ennemyHand,allyHand)}
-
-                document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.${allyHand[0].hp}`;
+                if (ennemyHand.length) { 
+                    randomEnnemyAttack(ennemyHand,allyHand);
+                    document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.${allyHand[0].hp}`;
 
                 
-                if (allyHand[0].hp <= 0){
+                    if (allyHand[0].hp <= 0){
                     document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.0`;
-                    deadToNewOne(allyHand)
+                    deadToNewOne(allyHand);
 
-                };
-                // document.querySelector(".textInput").textContent = `Your ${allyHand[0].name} is faster than James' ${ennemyHand[0].name}. Your pokemon has attacked ${ennemyHand[0].name} which is now at HP.${ennemyHand[0].hp}. But it seems that James trained well its ${ennemyHand[0].name}, and he is still able to take a revenge on ${allyHand[0].name}, and return its HP to ${allyHand[0].hp}. Hold on the fight can continue! Please, choose your next attack!`
+                        if (allyHand.length) {
+                            document.querySelector(".textInput").textContent = `Your Pokemon was faster  thanJames' ${ennemyHand[0].name}. Your pokemon has attacked ${ennemyHand[0].name}  which is now at HP.${ennemyHand[0].hp}. But it seems that James trained well its {ennemyHand[0].name}, and he has killed your Pokémon. Hold on the fight cancontinue with the others! Please, choose your next attack!`
+                        }
+                        else {
+                        document.querySelector(".textInput").textContent = "Looks like James is in a bad Posture"
+                        }
+                     
+                    }
+                    else {
+                    document.querySelector(".textInput").textContent = `Your Pokemon Was faster than James ${ennemyHand[0].name}. Your pokemon has attacked ${ennemyHand[0].name}   which is now at HP.${ennemyHand[0].hp}.But it seems that James trained well its ${ennemyHand[0].name}, and he hasreturn ${allyHand[0].name} severe damages. Hold on the fight can continue! Please, choose your next attack!`
+                    }
+                }
             }
     }
     while (allyHand.length > 0 && ennemyHand.length > 0); // allyHand.length > 0 && ennemyHand.length === 0 || allyHand.length === 0 && ennemyHand.length > 0
     if (allyHand.length === 0) {
-        document.querySelector(".textInput").innerHTML = `Dammit, you loose ! Do you want to <a href="#">try again<a> or do you prefer to go back to the beach club and lie about you defeating James ?`
+        document.querySelector(".textInput").innerHTML = `Dammit, you loose ! Do you want to <a href="./index.html">try again</a> or do you prefer to go back to the beach club and lie about you defeating James?`
     }
     else { document.querySelector(".textInput").innerHTML = `YEAH! YOU WIN! There are no doubt you're gonna go far on this adventure. After crying for a bunch of minutes James decided to give you his money. You earned ₽2500. You finally have enough money to date Misty!`
     };
-    
-};
+    removeThemAll()
+
+}   
+;
 
 function executeGame() {
     if (countClickPickedCard >= 5) {
@@ -315,8 +334,6 @@ startGame.addEventListener("click", executeGame)
 cardPicker.addEventListener("click", onCardPickerClick)
 
 function removeThemAll() {
-startGame
-cardPicker
+startGame.removeEventListener("click", executeGame)
+cardPicker.removeEventListener("click", onCardPickerClick)
 }
-
-
