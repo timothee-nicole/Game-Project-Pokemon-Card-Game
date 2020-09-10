@@ -246,6 +246,7 @@ function chooseYourAction(allyHand, ennemyHand) {
 
 // function for the game and the turn by turn
 async function game(allyHand, ennemyHand) {
+    document.querySelector(".textInput").textContent = `The game starts ! Please, choose your attack!`
     do {
             if (allyHand[0].speed < ennemyHand[0].speed) {
                 console.log('Ennemy Starts')
@@ -263,10 +264,14 @@ async function game(allyHand, ennemyHand) {
                 if (ennemyHand[0].hp <= 0) {
                     document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
                         deadToNewOne(ennemyHand)
-                } else {'ennemy is still alive'}
-            }
+                    
+                } 
+                document.querySelector(".textInput").textContent = `James' ${ennemyHand[0].name} is faster than ${allyHand[0].name}. He has attacked your ${allyHand[0].name} which is now at HP.${allyHand[0].hp}. But it seems that even if ${allyHand[0].name} partied with you, he is still able to kick the ass of ${ennemyHand[0].name}, and return its HP to ${ennemyHand[0].hp}. Hold on the fight can continue! Please, choose your next attack!`
+                }
+
+            
             else {
-                console.log('ally starts')
+                console.log('Ally starts')
                 const resultat = await chooseYourAction(allyHand, ennemyHand);
                 resultat;
                 document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.${ennemyHand[0].hp}`
@@ -284,12 +289,12 @@ async function game(allyHand, ennemyHand) {
                     document.querySelector(`#ally${allyHand[0].name}`).innerHTML = `HP.0`;
                     deadToNewOne(allyHand)
                 };
-            
+                document.querySelector(".textInput").textContent = `Your ${allyHand[0].name} is faster than James' ${ennemyHand[0].name}. Your pokemon has attacked ${ennemyHand[0].name} which is now at HP.${ennemyHand[0].hp}. But it seems that James trained well its ${ennemyHand[0].name}, and he is still able to take a revenge on ${allyHand[0].name}, and return its HP to ${allyHand[0].hp}. Hold on the fight can continue! Please, choose your next attack!`
             }
-
     }
-    while (allyHand.length > 0 || ennemyHand.length > 0);
-    console.log("endGame")
+    while (allyHand.length > 0 || ennemyHand.length > 0); 
+    document.querySelector(".textInput").textContent = `The game starts ! Please, choose your attack!`
+
 };
 
 function executeGame() {
