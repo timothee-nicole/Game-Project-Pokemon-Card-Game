@@ -3,9 +3,10 @@
 }
 body {
     background: url(./images_html/background2.jpg);
-    background-size:auto 100%;
-    background-position: center center;
-    height: 100vh;
+    background-color: rgb(38,116,178);
+    background-size:100% auto;
+    background-position: center ;
+    height: 100%;
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
@@ -17,8 +18,14 @@ body {
     margin: 1vw;
     padding: 0.1vw;
 }
+.storytime img {
+    width: 17vw;
+    height: 4vw;
+    padding: 0;
+}
 .storytime p {
-    font-size: 1vw;
+    font-size: 0.8vw;
+    padding: 0;
 }
 h4 {
     font-size: 1vw;
@@ -26,7 +33,7 @@ h4 {
 #rules {
     background: rgba(240, 240, 240, 0.938);
     border: 0.1vw solid black;
-    margin: 1vw;
+    margin: 0.2vw 1vw;
     padding: 0.1vw;
 }
 .fireColor {
@@ -103,7 +110,7 @@ li {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: -1vw ;
+    margin: 0.2vw -1vw ;
 }
 .attackTool {
     width: 20vw;
@@ -255,7 +262,7 @@ h3 {
 
 .textInput {
     background-color: rgb(0, 0, 0);
-    width: 16vw;
+    width: 18vw;
     color: whitesmoke;
     border: 3px solid grey
 }
