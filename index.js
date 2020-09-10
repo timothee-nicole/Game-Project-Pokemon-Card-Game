@@ -65,7 +65,7 @@ function fiveNewCardsAlly() {
         const newDiv = document.createElement("div");
         // console.log('you clicked it');
         newDiv.innerHTML =
-        `<div id=${allyHand[countClickPickedCard -1].type} draggable="true" type="text" class="ally${allyHand[countClickPickedCard - 1].name}">
+        `<div id=${allyHand[countClickPickedCard -1].type} draggable="true" type="text" class=ally${allyHand[countClickPickedCard -1].id}>
         <div class="name">
                 <h1>${allyHand[countClickPickedCard - 1].name}</h1>
                 <h1 id=ally${allyHand[countClickPickedCard - 1].name}>HP.${allyHand[countClickPickedCard - 1].hp}</h1>
@@ -86,10 +86,6 @@ function fiveNewCardsAlly() {
             </div>
 
             <div class="description">
-                <h2>Healing</h2>
-                <h2>${allyHand[countClickPickedCard - 1].healing}</h2>
-            </div>
-            <div class="description">
                 <h2>Life Thief</h2>
                 <h2>${allyHand[countClickPickedCard - 1].thief}</h2>
             </div>
@@ -109,7 +105,7 @@ function fiveNewCardsEnnemy() {
         const newDiv = document.createElement("div");
         let cardToDisplay = ennemyHand[countClickPickedCard - 1]
         newDiv.innerHTML =
-            `<div id=${cardToDisplay.type} type="text" class="player">
+            `<div id=${cardToDisplay.type} type="text" class=ennemy${ennemyHand[countClickPickedCard -1].id}>
                 <div class="name">
                     <h1>${cardToDisplay.name}</h1>
                     <h1 id=ennemy${cardToDisplay.name}>HP.${cardToDisplay.hp}</h1>
@@ -129,10 +125,6 @@ function fiveNewCardsEnnemy() {
                     <h2>${cardToDisplay.attack}</h2>
                 </div>
 
-                <div class="description">
-                    <h2>Soin</h2>
-                    <h2>${cardToDisplay.healing}</h2>
-                </div>
                 <div class="description">
                     <h2>Vol de vie</h2>
                     <h2>${cardToDisplay.thief}</h2>
@@ -202,10 +194,10 @@ function casualAttack(playerOne, playerTwo) {
 };
 
 // Function for healing
-function healing(playerOne) {
+/*function healing(playerOne) {
     console.log(`${playerOne[0].name} has been healed`, `${playerOne[0].name} hp = ${playerOne[0].hp}`)
     return playerOne[0].hp = playerOne[0].hp + playerOne[0].healing;
-};
+};*/
 
 // Function for the attack that steal ennemy's HP 1/2
 function stealYourEnnemy(playerOne, playerTwo) {
@@ -217,8 +209,8 @@ function stealYourEnnemy(playerOne, playerTwo) {
 // Function for the Bot to attack randomly, AI they said...
 function randomEnnemyAttack(ennemyHand, allyHand) {
     console.log(`${ennemyHand[0].name} has chosen its attack`);
-    let n = Math.floor(Math.random() * 3 + 1); console.log('n = ',n);
-    n === 1 ? casualAttack(ennemyHand, allyHand) : n === 2 ? stealYourEnnemy(ennemyHand, allyHand) : n === 3 ? attackSpe(ennemyHand, allyHand) : healing(ennemyHand);
+    let n = Math.floor(Math.random() * 2 + 1); console.log('n = ',n);
+    n === 1 ? casualAttack(ennemyHand, allyHand) : n === 2 ? stealYourEnnemy(ennemyHand, allyHand) : attackSpe(ennemyHand, allyHand) // :  healing(ennemyHand);
 }
 
 // Function to replace dead pokemon
@@ -244,10 +236,10 @@ function chooseYourAction(allyHand, ennemyHand) {
                 success(casualAttack(allyHand, ennemyHand));
                 //console.log('Right');
             }
-            else if (evt.keyCode === 40) {
+            /*else if (evt.keyCode === 40) {
                 success(healing(allyHand));
                 //console.log('Down');
-            };
+            };*/
         };
     });
 };
@@ -268,8 +260,6 @@ async function game(allyHand, ennemyHand) {
                 const resultat = await chooseYourAction(allyHand, ennemyHand);
                 resultat;
                 document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.${ennemyHand[0].hp}`;
-     
-                console.log(resultat);
                 if (ennemyHand[0].hp <= 0) {
                     document.querySelector(`#ennemy${ennemyHand[0].name}`).innerHTML = `HP.0`;
                         deadToNewOne(ennemyHand)
@@ -298,11 +288,14 @@ async function game(allyHand, ennemyHand) {
             }
 
     }
-    while (allyHand.length > 0 || ennemyHand.length > 0)
+    while (allyHand.length > 0 || ennemyHand.length > 0);
+    console.log("endGame")
 };
 
 function executeGame() {
-    game(allyHand, ennemyHand)
+    if (countClickPickedCard >= 5) {
+        game(allyHand, ennemyHand)
+    }
 }
 startGame.addEventListener("click", executeGame)  
 cardPicker.addEventListener("click", onCardPickerClick)

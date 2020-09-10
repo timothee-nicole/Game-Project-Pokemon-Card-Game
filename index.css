@@ -3,16 +3,19 @@
 }
 body {
     background: url(./images_html/background2.jpg);
-    background-size: 100vw;
+    background-size:auto 100%;
+    background-position: center center;
+    height: 100vh;
     background-repeat: no-repeat;
     display: flex;
-
+    align-items: center;
+    margin: 0;
 }
 .storytime {
     background: rgba(255, 212, 169, 0.7);
     border: 2px solid rgb(105, 54, 2);
     margin: 1vw;
-    padding: 2px;
+    padding: 0.1vw;
 }
 .storytime p {
     font-size: 1vw;
@@ -22,9 +25,9 @@ h4 {
 }
 #rules {
     background: rgba(240, 240, 240, 0.938);
-    border: 2px solid black;
+    border: 0.1vw solid black;
     margin: 1vw;
-    padding: 2px;
+    padding: 0.1vw;
 }
 .fireColor {
     color: rgb(255, 118, 118);
@@ -52,7 +55,7 @@ li {
     background-image: url(./background_type/fire.gif);
     background-size: contain;
     background-repeat: no-repeat;
-    border: 2px solid rgba(177, 177, 177, 0.89);
+    border: 0.1vw solid rgba(177, 177, 177, 0.89);
     position: relative;
 }
 .water img{
@@ -62,7 +65,7 @@ li {
     background-image: url(./background_type/water.gif);
     background-size: contain;
     background-repeat: no-repeat;
-    border: 2px solid rgba(177, 177, 177, 0.89);
+    border: 0.1vw solid rgba(177, 177, 177, 0.89);
     position: relative;
 }
 .rock img{
@@ -71,7 +74,7 @@ li {
     margin: 0.35vw;
     background-image: url(./background_type/rock.jpg);
     background-repeat: no-repeat;
-    border: 2px solid rgba(177, 177, 177, 0.89);
+    border: 0.1vw solid rgba(177, 177, 177, 0.89);
     position: relative;
 }
 .plant img{
@@ -80,19 +83,19 @@ li {
     margin: 0.35vw;
     background-image: url(./background_type/plant.png);
     background-repeat: no-repeat;
-    border: 2px solid rgba(177, 177, 177, 0.89);
+    border: 0.1vw solid rgba(177, 177, 177, 0.89);
     position: relative;
 }
 #pickACard {
-    width: 120px;
-    height: 170px;
-    border-radius: 8px;
+    width: 7vw;
+    height: 10vw;
+    border-radius: 0.3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 10px 5px;
+    margin: 0.3vw 0.2vw;
 }
 .deckNShuffle {
     width: 20vw;
@@ -100,10 +103,7 @@ li {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: -1vw;
-}
-.deckNShuffle img {
-    height: 1vw;
+    margin: -1vw ;
 }
 .attackTool {
     width: 20vw;
@@ -112,17 +112,15 @@ li {
     align-items: center;
     justify-content: center;
     text-align: center;
-}
-.attackTool li {
-    text-align: left;
+    margin: 0;
 }
 .attackTool img {
     width: 4vw;
 }
-.attackTool p {
+#rules p {
     font-size: 0.8vw;
 }
-.attackTool li {
+#rules li {
     font-size: 0.7vw;
 }
 #fiveNewCardsAlly {
@@ -130,7 +128,7 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items:  center;
-    margin: -70px 20px;
+    margin: 0vw 2vw;
     padding: 30px;
 }
 #fiveNewCardsEnnemy {
@@ -138,7 +136,7 @@ li {
     flex-direction: row;
     justify-content: center;
     align-items:  center;
-    margin: 0px 20px;
+    margin: 0 2vw;
     padding: 30px;
 }
 @keyframes flip-horizontal-bottom {
@@ -160,9 +158,9 @@ li {
     width: 7vw;
     height: 11vw;
     background: rgb(255, 118, 118);
-    border: 3px solid rgba(255, 230, 0, 0.89);
+    border: 0.2vw solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 0px 20px;
+    margin: 0px 0.5vw;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -172,9 +170,9 @@ li {
     width: 7vw;
     height: 11vw;
     background: rgb(118, 193, 255);
-    border: 3px solid rgba(255, 230, 0, 0.89);
+    border: 0.2vw solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 20px;
+    margin: 0px 0.5vw;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -184,9 +182,9 @@ li {
     width: 7vw;
     height: 11vw;
     background: rgb(111, 204, 116);
-    border: 3px solid rgba(255, 230, 0, 0.89);
+    border: 0.2vw solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 20px;
+    margin: 0px 0.5vw;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -196,9 +194,9 @@ li {
     width: 7vw;
     height: 11vw;
     background: rgba(209, 158, 91, 0.945);
-    border: 3px solid rgba(255, 230, 0, 0.89);
+    border: 0.2vw solid rgba(255, 230, 0, 0.89);
     border-radius: 5px;
-    margin: 20px;
+    margin: 0px 0.5vw;
     justify-content: center;
     box-sizing: border-box;
     color: rgba(95, 95, 95, 0.89);
@@ -207,20 +205,20 @@ li {
 .teamRocket {
     width: 100px;  
     height: 100px;
-    margin: 10px 80px 30px 40px;
+    margin: 0.2vw 0.8vw 0.2vw 0.4vw;
 }
 .name {
     display: flex;
-    margin: 0px 5px -15px 5px;
+    margin: -0.3vw 0.3vw -1.1vw 0.3vw;
     justify-content: space-between;
 }
 h1 {
     font-size: 0.7vw;
-    margin: 5px 3px 11px 3px;
+    margin: 0.4vw 0.3vw 0.8vw 0.3vw;
 }
 h2 {
     font-size: 0.65vw;
-    margin: 100px 5px 12px 0px;
+    margin: 100px 0.55vw 17px 0;
 }
 .cardDescription {
     display: flex;
@@ -241,35 +239,23 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    justify-content: space-evenly;
-}
-.battleSpot {
-    border: 2px dashed black;
-    background-color: rgba(204, 204, 204, 0.5);
-    display: flex;
-    align-items: center;
-    width: 120px;
-    height: 200px;
-}
-.battleField {
-    display: flex;
     justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
 }
 h3 {
     color:black;
     background: rgba(255, 255, 255, 0.644);
-    margin: 5px 10px;
-    padding: 3px;
+    margin: 1vw 1vw;
+    padding: 0.2vw;
     font-size: 15px;
 }
 .sacha {
-    width: 130px;
-    margin: 10px 0px 30px 40px;
+    margin: 5vw 0px 5vw 1vw;
 }
+
 .textInput {
-    background-color: rgb(255, 246, 198);
+    background-color: rgb(0, 0, 0);
     width: 16vw;
+    color: whitesmoke;
     border: 3px solid grey
 }

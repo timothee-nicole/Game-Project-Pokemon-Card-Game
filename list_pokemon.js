@@ -8,7 +8,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 30
+        speed : 30,
+        id : 1
     },
     {
         name : 'Ninetales',
@@ -19,7 +20,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 70
+        speed : 70,
+        id : 2
     },
     {
         name : 'Arcanine',
@@ -30,7 +32,8 @@ export let allTheCards = [
         attack : 50,
         healing : 50,
         thief : 40,
-        speed : 60
+        speed : 60,
+        id : 3
     },
     {
         name : 'Charmeleon',
@@ -41,7 +44,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 60,
-        speed : 70
+        speed : 70,
+        id : 4
     },
     {
         name : 'Rapidash',
@@ -52,7 +56,8 @@ export let allTheCards = [
         attack : 70,
         healing : 40,
         thief : 50,
-        speed : 80
+        speed : 80,
+        id : 5
     },
     {
         name : 'Magmamar',
@@ -63,7 +68,8 @@ export let allTheCards = [
         attack : 60,
         healing : 30,
         thief : 30,
-        speed : 40
+        speed : 40,
+        id : 6
     },
     {
         name : 'Flareon',
@@ -74,7 +80,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 40,
-        speed : 50
+        speed : 50,
+        id : 7
     },
     {
         name : 'Moltres',
@@ -85,7 +92,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 60
+        speed : 60,
+        id : 8
     },
     {
         name : 'Dragonite',
@@ -96,7 +104,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 40
+        speed : 40,
+        id : 9
     },
     {
         name : 'Blastoise',
@@ -107,7 +116,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 30
+        speed : 30,
+        id : 10
     },
     {
         name : 'Golduck',
@@ -118,7 +128,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 70
+        speed : 70,
+        id : 11
     },
     {
         name : 'Poliwrath',
@@ -129,7 +140,8 @@ export let allTheCards = [
         attack : 50,
         healing : 50,
         thief : 40,
-        speed : 60
+        speed : 60,
+        id : 12
     },
     {
         name : 'Starmie',
@@ -140,7 +152,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 60,
-        speed : 70
+        speed : 70,
+        id : 13
     },
     {
         name : 'Seadra',
@@ -151,7 +164,8 @@ export let allTheCards = [
         attack : 70,
         healing : 40,
         thief : 50,
-        speed : 80
+        speed : 80,
+        id : 14
     },
     {
         name : 'Lapras',
@@ -162,7 +176,8 @@ export let allTheCards = [
         attack : 60,
         healing : 30,
         thief : 30,
-        speed : 40
+        speed : 40,
+        id : 15
     },
     {
         name : 'Vaporeon',
@@ -173,7 +188,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 40,
-        speed : 50
+        speed : 50,
+        id : 16
     },
     {
         name : 'Articuno',
@@ -184,7 +200,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 60
+        speed : 60,
+        id : 17
     },
     {
         name : 'Gyarados',
@@ -195,7 +212,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 40
+        speed : 40,
+        id : 18
     },
     {
         name : 'Venusaur',
@@ -206,7 +224,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 30
+        speed : 30,
+        id : 19
     },
     {
         name : 'Buterfree',
@@ -217,7 +236,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 70
+        speed : 70,
+        id : 20
     },
     {
         name : 'Arbok',
@@ -228,7 +248,8 @@ export let allTheCards = [
         attack : 50,
         healing : 50,
         thief : 40,
-        speed : 60
+        speed : 60,
+        id : 21
     },
     {
         name : 'Tangela',
@@ -239,7 +260,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 60,
-        speed : 70
+        speed : 70,
+        id : 22
     },
     {
         name : 'Beedrill',
@@ -250,7 +272,8 @@ export let allTheCards = [
         attack : 70,
         healing : 40,
         thief : 50,
-        speed : 80
+        speed : 80,
+        id : 23
     },
     {
         name : 'Scyther',
@@ -261,7 +284,8 @@ export let allTheCards = [
         attack : 60,
         healing : 30,
         thief : 30,
-        speed : 40
+        speed : 40,
+        id : 24
     },
     {
         name : 'Nidoqueen',
@@ -272,7 +296,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 40,
-        speed : 50
+        speed : 50,
+        id : 25
     },
     {
         name : 'Exeggutor',
@@ -283,7 +308,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 60
+        speed : 60,
+        id : 26
     },
     {
         name : 'Nidoking',
@@ -294,7 +320,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 40
+        speed : 40,
+        id : 27
     },
     {
         name : 'Machamp',
@@ -305,7 +332,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 30
+        speed : 30,
+        id : 28
     },
     {
         name : 'Sandslash',
@@ -316,7 +344,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 70
+        speed : 70,
+        id : 29
     },
     {
         name : 'Primeape',
@@ -327,7 +356,8 @@ export let allTheCards = [
         attack : 50,
         healing : 50,
         thief : 40,
-        speed : 60
+        speed : 60,
+        id : 30
     },
     {
         name : 'Dutrio',
@@ -338,7 +368,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 60,
-        speed : 70
+        speed : 70,
+        id : 31
     },
     {
         name : 'Golem',
@@ -349,7 +380,8 @@ export let allTheCards = [
         attack : 70,
         healing : 40,
         thief : 50,
-        speed : 80
+        speed : 80,
+        id : 32
     },
     {
         name : 'Kangaskhan',
@@ -360,7 +392,8 @@ export let allTheCards = [
         attack : 60,
         healing : 30,
         thief : 30,
-        speed : 40
+        speed : 40,
+        id : 33
     },
     {
         name : 'Rhydon',
@@ -371,7 +404,8 @@ export let allTheCards = [
         attack : 50,
         healing : 40,
         thief : 40,
-        speed : 50
+        speed : 50,
+        id : 34
     },
     {
         name : 'Kabutops',
@@ -382,7 +416,8 @@ export let allTheCards = [
         attack : 60,
         healing : 50,
         thief : 50,
-        speed : 60
+        speed : 60,
+        id : 35
     },
     {
         name : 'Onix',
@@ -393,7 +428,8 @@ export let allTheCards = [
         attack : 60,
         healing : 40,
         thief : 50,
-        speed : 40
+        speed : 40,
+        id : 36
     },   
 ]
 /* const mewtwo : new Pokemon 

@@ -149,6 +149,9 @@ function fiveNewCardsEnnemy() {
 cardPicker.onclick = function () {
     countClickPickedCard++;
 }
+// Function to add input and "dialogue box" to the game.
+// variable to target the text box
+document.querySelector(".textInput").textContent = `James' Pokemon is faster than ${allyHand[0].name}, `
 
 // Event Listener for the shuffle
 // shuffler.addEventListener("click", shuffleAllyDeck);
@@ -297,3 +300,4 @@ async function game(allyHand, ennemyHand) {
 };
 
 
+document.querySelector(".textInput").textContent = `James' Pokemon is faster than ${allyHand[0].name}. He has acted his pokemon is now at HP.${ennemyHand[0].hp}, and yours is at HP.${allyHand[0].hp}. You have machin`
